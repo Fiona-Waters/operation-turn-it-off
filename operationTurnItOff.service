@@ -1,0 +1,14 @@
+[Unit]
+Description=operationTurnItOffService
+After=network.target
+
+[Service]
+ExecStart=/home/pi/OperationTurnItOff-Assignment/main.py mqtt://mqtt3.thingspeak.com:8883
+WorkingDirectory=/home/pi/OperationTurnItOff-Assignment
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
